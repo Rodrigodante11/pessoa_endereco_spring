@@ -1,8 +1,11 @@
 package com.rodrigo.pessoa_spring.dto;
 
 import com.rodrigo.pessoa_spring.entity.Endereco;
+import com.rodrigo.pessoa_spring.entity.Pessoa;
 import lombok.*;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 
 @Getter
@@ -16,7 +19,9 @@ public class PessoaDTO {
     private Long id;
     private String nome;
     private Date data_nascimento;
-    private Endereco endereco;
+    private Long endereco;
 
-    private Long pessoa;
+//    @ManyToOne
+//    @JoinColumn(name = "pessoa_id")
+//    private Pessoa pessoa;
 }

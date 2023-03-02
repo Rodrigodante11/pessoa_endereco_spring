@@ -13,5 +13,6 @@ public interface PessoaService {
     List<Pessoa> buscarPessoa(Pessoa pessoa);
     void validarPessoa(Pessoa pessoa);
     Optional<Pessoa> obterPessoaPorId(Long id);
+    List<Pessoa> obterTodasPessoas();
 
 }

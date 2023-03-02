@@ -66,4 +66,9 @@ public class PessoaServiceImp implements PessoaService {
         Optional<Pessoa> pessoa =  pessoaRepository.findById(id);
         return pessoa;
     }
+
+    @Override
+    public List<Pessoa> obterTodasPessoas() {
+        return pessoaRepository.findAll();
+    }
 }
