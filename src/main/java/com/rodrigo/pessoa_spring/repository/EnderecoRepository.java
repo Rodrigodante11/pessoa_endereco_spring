@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface EnderecoRepository  extends JpaRepository<Endereco, Long> {
 
-    Optional<Endereco> findByCep(Long aLong);
+    Optional<Endereco> findByCep(String cep);
 }
