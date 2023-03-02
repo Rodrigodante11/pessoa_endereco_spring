@@ -9,6 +9,7 @@ import com.rodrigo.pessoa_spring.exceptions.PessoaErroException;
 import com.rodrigo.pessoa_spring.service.EnderecoService;
 import com.rodrigo.pessoa_spring.service.PessoaService;
 import com.rodrigo.pessoa_spring.utility.Converter;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,7 @@ public class PessoaController {
 
     private final EnderecoService enderecoService;
 
+    @ApiOperation(value = "Salva Pessoa")
     @PostMapping
     public ResponseEntity salvar(@RequestBody PessoaDTO pessoaDTO){
 
@@ -44,6 +46,7 @@ public class PessoaController {
         }
     }
 
+    @ApiOperation(value = "Atualiza Pessoas cadastratadas")
     @PutMapping("{id}")
     public ResponseEntity<?> atualizar( @PathVariable("id") Long id, @RequestBody PessoaDTO pessoaDTO ) {
 
@@ -67,6 +70,7 @@ public class PessoaController {
                 new ResponseEntity<>("Pessoa não encontrado na base de Dados.", HttpStatus.BAD_REQUEST) );
     }
 
+    @ApiOperation(value = "Consulta  Pessoa por ID")
     @GetMapping("{id}")
     public ResponseEntity<?> obterPessoaPorId(@PathVariable("id") Long id){
 
@@ -78,6 +82,8 @@ public class PessoaController {
 
         return ResponseEntity.ok(pessoa);
     }
+
+    @ApiOperation(value = "Consulta todas Pessoas cadastratadas")
     @GetMapping("/todas")
     public ResponseEntity<?> obterTodasPessoas(){
 
