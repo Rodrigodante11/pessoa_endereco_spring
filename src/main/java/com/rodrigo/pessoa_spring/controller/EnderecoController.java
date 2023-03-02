@@ -5,18 +5,23 @@ import com.rodrigo.pessoa_spring.entity.Endereco;
 import com.rodrigo.pessoa_spring.exceptions.EnderecoErroException;
 import com.rodrigo.pessoa_spring.service.EnderecoService;
 import com.rodrigo.pessoa_spring.utility.Converter;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import io.swagger.annotations.Api;
 
 @RestController
 @RequestMapping("/api/enderecos")
 @RequiredArgsConstructor
+@Api(value = "API REST Endereco")
+@CrossOrigin(origins = "*")
 public class EnderecoController {
 
     private final EnderecoService enderecoService;
 
+    @ApiOperation(value = "Salva Endereco")
     @PostMapping()
     public ResponseEntity<?> salvar(@RequestBody EnderecoDTO enderecoDTO){
 
@@ -29,6 +34,8 @@ public class EnderecoController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @ApiOperation(value = "Consulta Endereco")
     @GetMapping("{id}")
     public ResponseEntity<?> obterEnderecoPorId(@PathVariable("id") Long id){
         return enderecoService.obterEnderecoPorId(id)
@@ -37,7 +44,7 @@ public class EnderecoController {
                         )
                 ).orElseGet( () -> new ResponseEntity<>((HttpStatus.NOT_FOUND)));
     }
-
+    @ApiOperation(value = "Atualiza Endereco")
     @PutMapping("{id}")
     public ResponseEntity<?> atualizar( @PathVariable("id") Long id, @RequestBody EnderecoDTO dto ) {
         return enderecoService.obterEnderecoPorId(id).map( entity -> {
@@ -56,6 +63,7 @@ public class EnderecoController {
                 new ResponseEntity<>("Endereco não encontrado na base de Dados.", HttpStatus.BAD_REQUEST) );
     }
 
+    @ApiOperation(value = "Deletar Endereco")
     @DeleteMapping("{id}")
     public ResponseEntity<?> deletar(@PathVariable("id") Long id ){
 
