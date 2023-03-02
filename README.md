@@ -7,7 +7,9 @@
 <strong>Repositorio do BackEnd SpringBootAPI</strong> </br>
 <strong>Java 11 </strong> </br>
 <strong>Spring-boot 2.7.9 </strong> </br>
+<strong>JPA </strong> </br>
 <strong>Junit 5</strong></br>
+<strong>Swagger</strong></br>
 
 Para baixar o projeto BACKEND SpringBootAPI:
 
