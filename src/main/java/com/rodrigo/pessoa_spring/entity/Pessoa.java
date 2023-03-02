@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,5 +24,9 @@ public class Pessoa {
     @ManyToOne
     @JoinColumn(name = "endereco_id")
     private Endereco endereco;
+
+//    @OneToMany
+//    @JoinColumn(name = "endereco_id")
+//    private List<Endereco> endereco;
 
 }
