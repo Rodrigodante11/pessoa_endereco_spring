@@ -18,11 +18,8 @@ public class Pessoa {
     @Column(name="id", unique = true)
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nome;
-
     private Date data_nascimento;
-
     @ManyToOne
     @JoinColumn(name = "endereco_id")
     private Endereco endereco;

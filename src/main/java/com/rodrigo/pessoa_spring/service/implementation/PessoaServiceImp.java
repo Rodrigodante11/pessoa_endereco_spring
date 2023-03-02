@@ -3,6 +3,7 @@ package com.rodrigo.pessoa_spring.service.implementation;
 import com.rodrigo.pessoa_spring.entity.Pessoa;
 import com.rodrigo.pessoa_spring.exceptions.EnderecoErroException;
 import com.rodrigo.pessoa_spring.repository.PessoaRepository;
+import com.rodrigo.pessoa_spring.service.PessoaService;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
-public class PessoaServiceImp implements PessoaService{
+public class PessoaServiceImp implements PessoaService {
 
     private PessoaRepository pessoaRepository;
 

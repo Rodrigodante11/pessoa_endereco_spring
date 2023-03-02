@@ -1,4 +1,4 @@
-package com.rodrigo.pessoa_spring.service.implementation;
+package com.rodrigo.pessoa_spring.service;
 
 import com.rodrigo.pessoa_spring.entity.Pessoa;
 

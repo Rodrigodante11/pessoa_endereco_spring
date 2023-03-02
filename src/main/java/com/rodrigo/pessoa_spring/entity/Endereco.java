@@ -21,6 +21,7 @@ public class Endereco {
     @Column(length = 10, nullable = false)
     private String cep;
     private int numero;
+    private boolean isEnderecoprincipal;
     @Column(length = 100, nullable = false)
     private String cidade;
 
