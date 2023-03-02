@@ -71,6 +71,7 @@ public class EnderecoRepositoryTest {
         endereco.setCep("11111111");
         endereco.setCidade("cidade editado");
         endereco.setLogradouro("praca editado");
+        endereco.setEnderecoprincipal(false);
 
         enderecoRepository.save(endereco);
 
@@ -79,6 +80,7 @@ public class EnderecoRepositoryTest {
         assertThat(enderecoAtualizado.getCep()).isEqualTo("11111111");
         assertThat(enderecoAtualizado.getCidade()).isEqualTo("cidade editado");
         assertThat(enderecoAtualizado.getLogradouro()).isEqualTo("praca editado");
+        assertThat(enderecoAtualizado.isEnderecoprincipal()).isFalse();
 
     }
 

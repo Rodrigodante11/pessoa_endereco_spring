@@ -72,6 +72,7 @@ public class PessoaRepositoryTest {
         endereco.setCidade("cidade editado");
         endereco.setLogradouro("praca editado");
         pessoa.setNome("Rodrigo Editado");
+        endereco.setEnderecoprincipal(false);
         pessoa.setEndereco(endereco);
 
         pessoaRepository.save(pessoa);
@@ -82,6 +83,7 @@ public class PessoaRepositoryTest {
         assertThat(pessoa.getEndereco().getCep()).isEqualTo("11111111");
         assertThat(pessoa.getEndereco().getCidade()).isEqualTo("cidade editado");
         assertThat(pessoa.getEndereco().getLogradouro()).isEqualTo("praca editado");
+        assertThat(pessoa.getEndereco().isEnderecoprincipal()).isFalse();
 
     }
 

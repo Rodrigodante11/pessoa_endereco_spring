@@ -18,6 +18,8 @@ public class Criar {
     private static String LOGRADOURO= "Praca";
     private static int NUMERO = 111;
 
+    private static boolean ISENDERECOPRINCIPAL = true;
+
     private static String NOME = "Rodrigo Augusto de Oliveira";
     private static Date DATA_NASCIMENTO;
 
@@ -29,13 +31,13 @@ public class Criar {
         }
     }
 
-
     public static Endereco endereco() { // usado para testes
         return Endereco.builder()
                 .cep(CEP)
                 .cidade(CIDADE)
                 .Logradouro(LOGRADOURO)
-                .numero(NUMERO).build();
+                .numero(NUMERO)
+                .isEnderecoprincipal(ISENDERECOPRINCIPAL).build();
     }
 
     public static Pessoa pessoa(){ // usado para testes
